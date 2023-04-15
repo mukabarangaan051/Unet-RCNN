@@ -22,7 +22,7 @@ import tensorflow.keras.utils as KU
 from tensorflow.python.eager import context
 import tensorflow.keras.models as KM
 import tensorflow.keras.optimizers as op
-from mrcnn import utils
+from urcnn import utils
 
 # Requires TensorFlow 2.0+
 from distutils.version import LooseVersion
@@ -2064,7 +2064,7 @@ class MaskRCNN(object):
 
         # Add multi-GPU support.
         if config.GPU_COUNT > 1:
-            from mrcnn.parallel_model import ParallelModel
+            from urcnn.parallel_model import ParallelModel
             model = ParallelModel(model, config.GPU_COUNT)
 
         return model
